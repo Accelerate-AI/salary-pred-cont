@@ -7,7 +7,7 @@ COPY . /app
 WORKDIR /app
 
 #Install all requirements
-RUN pip3 install -r /requirements.txt
+RUN pip install -r requirements.txt
 
 #Run the following on on execution
-CMD ["gunicorn"  , "-b", "0.0.0.0:5000", "main:app"]
+CMD exec gunicorn  --bind :5000 --worker 1 --thread 8 --timeout 0 main:app
