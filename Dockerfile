@@ -1,6 +1,6 @@
 # Dockerfile
 #Start with a base python version
-FROM python:3.9
+FROM python:3.7
 
 #Copy all files to app folder
 COPY . /app
