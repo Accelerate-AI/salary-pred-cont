@@ -10,4 +10,4 @@ WORKDIR /app
 RUN pip install -r requirements.txt
 
 #Run the following on on execution
-CMD exec gunicorn  --bind :5000 --worker 1 --thread 8 --timeout 0 main:app
+CMD exec gunicorn  --bind :$PORT --worker 1 --thread 8 --timeout 0 main:app
