@@ -3,6 +3,7 @@ import pandas as pd
 from flask import Flask, request, render_template
 from sklearn import preprocessing
 import pickle
+import os 
 
 app = Flask(__name__)
 model = pickle.load(open('lrmodel.pkl', 'rb'))
@@ -37,4 +38,4 @@ def predict_api():
 
 
 if __name__ == "__main__":
-    app.run(debug=False, host="0.0.0.0")
+    app.run(debug=False, host="0.0.0.0", port=int(os.environ.get("PORT", 8080)))
