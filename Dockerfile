@@ -7,7 +7,7 @@ COPY . /app
 WORKDIR /app
 
 #Install all requirements
-RUN pip install -r requirements.txt
+#RUN pip install -r requirements.txt
 
 #Expose a specific port
 EXPOSE 8080
